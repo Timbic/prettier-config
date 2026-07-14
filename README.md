@@ -11,7 +11,7 @@ pnpm add -D prettier @timbic/prettier-config
 ```mjs
 import withTimbic from "@timbic/prettier-config";
 
-export default withTimbic()
+export default withTimbic();
 
 // or
 
@@ -20,7 +20,7 @@ export default withTimbic({
 });
 ```
 
-Your options will override the defaults which were set above.
+Your options will override the defaults and extend the config.
 
 ## Default options:
 
