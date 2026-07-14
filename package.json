@@ -1,7 +1,7 @@
 {
 	"name": "@timbic/prettier-config",
 	"type": "module",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"private": false,
 	"description": "Timbic's prettier configuration",
 	"author": "Timur Bikmuhametov <tim.bic22@gmail.com>",
@@ -10,6 +10,10 @@
 		"prettier",
 		"prettier-config"
 	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Timbic/prettier-config.git"
+	},
 	"exports": {
 		".": "./dist/index.js"
 	},
