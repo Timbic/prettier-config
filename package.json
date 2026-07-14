@@ -1,0 +1,45 @@
+{
+	"name": "@timbic/prettier-config",
+	"type": "module",
+	"version": "0.0.1",
+	"private": false,
+	"description": "Timbic's prettier configuration",
+	"author": "Timur Bikmuhametov <tim.bic22@gmail.com>",
+	"license": "MIT",
+	"keywords": [
+		"prettier",
+		"prettier-config"
+	],
+	"exports": {
+		".": "./dist/index.js"
+	},
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		".prettierignore",
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"typecheck": "tsc --noEmit",
+		"release": "bumpp && pnpm publish"
+	},
+	"peerDependencies": {
+		"prettier": "^3.9.5"
+	},
+	"dependencies": {
+		"prettier": "3.9.5"
+	},
+	"devDependencies": {
+		"bumpp": "^11.1.0",
+		"publint": "0.3.21",
+		"tsdown": "^0.22.5",
+		"typescript": "^6.0.3"
+	},
+	"packageManager": "pnpm@11.12.0"
+}
