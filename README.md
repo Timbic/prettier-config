@@ -1,6 +1,6 @@
 # @timbic/prettier-config
 
-Extensible prettier configurations for the smart developers.
+Extensible prettier configuration for the smart developers.
 
 ## Usage
 
@@ -16,7 +16,7 @@ export default withTimbic();
 // or
 
 export default withTimbic({
-	// ... your options
+	// your options
 });
 ```
 
