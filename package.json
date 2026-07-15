@@ -1,7 +1,7 @@
 {
 	"name": "@timbic/prettier-config",
 	"type": "module",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"private": false,
 	"description": "Timbic's prettier configuration",
 	"author": "Timur Bikmuhametov <tim.bic22@gmail.com>",
@@ -31,7 +31,7 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"typecheck": "tsc --noEmit",
-		"release": "bumpp && pnpm release"
+		"release": "bumpp && pnpm publish"
 	},
 	"peerDependencies": {
 		"prettier": "^3.9.5"
