@@ -31,7 +31,7 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"typecheck": "tsc --noEmit",
-		"release": "bumpp"
+		"release": "bumpp && pnpm release"
 	},
 	"peerDependencies": {
 		"prettier": "^3.9.5"
