@@ -1,8 +1,8 @@
 name: Release
 
 permissions:
+    id-token: write
     contents: write
-    issues: write
 
 on:
     push:
@@ -10,6 +10,22 @@ on:
             - "v*"
 
 jobs:
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v6
+
+            - uses: pnpm/action-setup@v5
+
+            - uses: actions/setup-node@v6
+              with:
+                  node-version: lts/*
+                  registry-url: "https://registry.npmjs.org"
+                  package-manager-cache: false
+
+            - run: pnpm install --frozen-lockfile
+            - run: pnpm build
+            - run: pnpm publish --no-git-checks --provenance
     release:
         runs-on: ubuntu-latest
         steps:
