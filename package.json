@@ -30,6 +30,8 @@
 		"build": "tsdown",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
+		"lint": "eslint --cache",
+		"lint:fix": "eslint --cache --fix",
 		"typecheck": "tsc --noEmit",
 		"release": "bumpp"
 	},
@@ -40,7 +42,9 @@
 		"prettier": "^3.9.5"
 	},
 	"devDependencies": {
+		"@timbic/eslint-config": "1.0.0",
 		"bumpp": "^11.1.0",
+		"eslint": "10.7.0",
 		"tsdown": "^0.22.5",
 		"typescript": "^6.0.3"
 	},
