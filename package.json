@@ -34,10 +34,10 @@
 		"release": "bumpp"
 	},
 	"peerDependencies": {
-		"prettier": "^3.9.5"
+		"prettier": "^3.0.0"
 	},
 	"dependencies": {
-		"prettier": "3.9.5"
+		"prettier": "^3.9.5"
 	},
 	"devDependencies": {
 		"bumpp": "^11.1.0",
