@@ -1,6 +1,6 @@
 import type { Config } from "prettier";
 
-const DEFAULT_CONFIG = {
+const defaultConfig = {
 	arrowParens: "always",
 	bracketSameLine: false,
 	bracketSpacing: true,
@@ -24,8 +24,8 @@ const DEFAULT_CONFIG = {
 	trailingComma: "all",
 	useTabs: true,
 	vueIndentScriptAndStyle: false,
-};
+} satisfies Config;
 
-export default function withTimbic(options?: Config): Config {
-	return { ...DEFAULT_CONFIG, ...options } as Config;
+export default function withTimbic(options?: Config) {
+	return { ...defaultConfig, ...options };
 }
