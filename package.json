@@ -32,7 +32,8 @@
 		"lint": "eslint --cache",
 		"lint:fix": "eslint --cache --fix",
 		"typecheck": "tsc --noEmit",
-		"release": "bumpp"
+		"release": "bumpp",
+		"prepare": "husky"
 	},
 	"peerDependencies": {
 		"prettier": "^3.0.0"
@@ -44,8 +45,16 @@
 		"@timbic/eslint-config": "1.0.0",
 		"bumpp": "^11.1.0",
 		"eslint": "10.7.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^17.0.8",
 		"tsdown": "^0.22.5",
 		"typescript": "^6.0.3"
+	},
+	"lint-staged": {
+		"*/**/*.{js,ts,md,json}": [
+			"pnpm fmt",
+			"pnpm lint:fix"
+		]
 	},
 	"packageManager": "pnpm@11.12.0"
 }
