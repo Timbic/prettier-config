@@ -102,10 +102,14 @@ interface Options {
 	rangeEnd: number;
 	/**
 	 * Specify which parser to use.
+	 *
+	 * @see https://prettier.io/docs/options#parser
 	 */
 	parser: LiteralUnion<BuiltInParserName>;
 	/**
 	 * Specify the input filepath. This will be used to do parser inference.
+	 *
+	 * @see https://prettier.io/docs/options#file-path
 	 */
 	filepath: string;
 	/**
@@ -150,6 +154,8 @@ interface Options {
 	arrowParens: "avoid" | "always";
 	/**
 	 * Provide ability to support new languages to prettier.
+	 *
+	 * @see https://prettier.io/docs/plugins
 	 */
 	plugins: Array<string | URL | Plugin>;
 	/**
