@@ -3,5 +3,5 @@ nodeVersion: "22.22.2"
 
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 604800 # 7 days
-minimumReleaseAgeExclude:
-    - "@timbic/eslint-config@1.0.0"
+overrides:
+    yuku-parser: "0.6.1"
