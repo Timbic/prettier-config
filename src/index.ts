@@ -1,4 +1,4 @@
-import type { Config } from "prettier";
+import type { Config } from "./types";
 
 const defaultConfig = {
 	arrowParens: "always",
@@ -26,6 +26,6 @@ const defaultConfig = {
 	vueIndentScriptAndStyle: false,
 } satisfies Config;
 
-export default function withTimbic(options?: Config) {
+export default function withTimbic(options?: Config): Config {
 	return { ...defaultConfig, ...options };
 }
