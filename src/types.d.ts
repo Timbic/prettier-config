@@ -33,9 +33,9 @@ interface Options {
 	 *
 	 * @see https://prettier.io/docs/options#tabs
 	 */
-	useTabs?: boolean;
-	parentParser?: string | undefined;
-	__embeddedInHtml?: boolean | undefined;
+	useTabs: boolean;
+	parentParser?: string;
+	__embeddedInHtml?: boolean;
 	/**
 	 * Print semicolons at the ends of statements.
 	 * @default true
