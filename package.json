@@ -43,12 +43,12 @@
 	},
 	"devDependencies": {
 		"@timbic/eslint-config": "1.0.0",
-		"bumpp": "^11.1.0",
+		"bumpp": "11.1.0",
 		"eslint": "10.7.0",
-		"husky": "^9.1.7",
-		"lint-staged": "^17.0.8",
-		"tsdown": "^0.22.5",
-		"typescript": "^6.0.3"
+		"husky": "9.1.7",
+		"lint-staged": "17.0.8",
+		"tsdown": "0.22.5",
+		"typescript": "6.0.3"
 	},
 	"lint-staged": {
 		"*/**/*.{js,ts,md,json}": [
