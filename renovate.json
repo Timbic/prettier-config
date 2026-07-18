@@ -1,6 +1,6 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["config:recommended", ":pinDevDependencies", ":widenPeerDependencies", ":semverCommits", "group:allNonMajor"],
+	"extends": ["config:recommended", ":pinDevDependencies", ":widenPeerDependencies", "group:allNonMajor"],
 	"baseBranchPatterns": ["main"],
 	"ignoreDeps": ["pnpm"],
 	"minimumReleaseAge": "7 days",
