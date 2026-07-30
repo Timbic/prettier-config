@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      prettier:
-        specifier: ^3.9.6
-        version: 3.9.6
     devDependencies:
       '@timbic/eslint-config':
         specifier: 1.0.0
@@ -27,6 +23,9 @@ importers:
       lint-staged:
         specifier: 17.2.0
         version: 17.2.0
+      prettier:
+        specifier: ^3.9.6
+        version: 3.9.6
       tsdown:
         specifier: 0.22.14
         version: 0.22.14(typescript@6.0.3)
