@@ -5,6 +5,7 @@
 	"ignoreDeps": ["pnpm"],
 	"minimumReleaseAge": "7 days",
 	"postUpdateOptions": ["pnpmDedupe"],
+	"allowedPostUpgradeCommands": ["pnpm lint", "pnpm fmt"],
 	"vulnerabilityAlerts": {
 		"postUpdateOptions": ["pnpmDedupe"]
 	},
@@ -15,7 +16,7 @@
 		},
 		{
 			"postUpgradeTasks": {
-				"commands": ["pnpm lint", "pnpm format"],
+				"commands": ["pnpm lint", "pnpm fmt"],
 				"executionMode": "update"
 			},
 			"matchUpdateTypes": ["minor", "patch", "pin", "digest"]
