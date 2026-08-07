@@ -5,7 +5,6 @@
 	"ignoreDeps": ["pnpm"],
 	"minimumReleaseAge": "7 days",
 	"postUpdateOptions": ["pnpmDedupe"],
-	"allowedPostUpgradeCommands": ["pnpm lint", "pnpm fmt"],
 	"vulnerabilityAlerts": {
 		"postUpdateOptions": ["pnpmDedupe"]
 	},
@@ -13,13 +12,6 @@
 		{
 			"minimumReleaseAge": null,
 			"matchPackageNames": ["/@timbic/*/"]
-		},
-		{
-			"postUpgradeTasks": {
-				"commands": ["pnpm lint", "pnpm fmt"],
-				"executionMode": "update"
-			},
-			"matchUpdateTypes": ["minor", "patch", "pin", "digest"]
 		}
 	]
 }
