@@ -1,6 +1,6 @@
 # @timbic/prettier-config
 
-Extensible prettier configuration for the smart developers.
+Extensible prettier configuration for smart developers.
 
 ## Usage
 
@@ -9,6 +9,7 @@ pnpm add -D prettier @timbic/prettier-config
 ```
 
 ```ts
+// prettier.config.{js,mjs,ts,mts}
 import withTimbic from "@timbic/prettier-config";
 
 export default withTimbic();
@@ -24,7 +25,7 @@ Your options will override the defaults and extend the config.
 
 ## Types
 
-Now this package has its own types! That means that when using withTimbic() you will get enhanced type annotations by Quick Info on each
+Now this package has its own types! That means that when using withTimbic() you will get enhanced type annotations via Quick Info on each
 rule, as well as the right default set by withTimbic(), e.g.
 
 ```ts
@@ -34,7 +35,7 @@ export default withTimbic({
 	// Specify the number of spaces per indentation-level.
 	// @default
 	//
-	// 2 (incorrect, this is not a withTimbic() default, this is prettier default)
+	// 2 (incorrect, this is not a withTimbic() default, this is the prettier default)
 });
 
 // after
