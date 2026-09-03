@@ -4,4 +4,5 @@ export default defineConfig({
 	entry: ["src/index.ts"],
 	format: ["esm"],
 	platform: "neutral",
+	outputOptions: { comments: { jsdoc: false } },
 });
