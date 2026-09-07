@@ -13,10 +13,10 @@ export interface Config extends Partial<Options> {
 
 export interface Options {
 	/**
-	 * @see https://prettier.io/docs/options#print-width
 	 * Specify the line length that the printer will wrap on.
 	 * @default 140
 	 *
+	 * @see https://prettier.io/docs/options#print-width
 	 */
 	printWidth: number;
 	/**
@@ -173,9 +173,9 @@ export interface Options {
 	endOfLine: "auto" | "lf" | "crlf" | "cr";
 	/**
 	 * Change when properties in objects are quoted.
+	 * @default "consistent"
 	 *
 	 * @see https://prettier.io/docs/options#quote-props
-	 * @default "consistent"
 	 */
 	quoteProps: "as-needed" | "consistent" | "preserve";
 	/**
@@ -255,27 +255,15 @@ const defaultConfig = {
 /**
  * Returns a Prettier config preset with the Timbic defaults, merged with any
  * user-provided options.
- *
- * @param options - Optional configuration to override the Timbic defaults.
- * @returns The merged Prettier config object.
- *
+
  * @example
  * ```ts
  * export default withTimbic({
  * 	singleQuote: true,
  * });
  * ```
- * Returns the default config with `singleQuote` overridden to `true`:
- * ```ts
- * {
- * 	arrowParens: "always",
- * 	bracketSameLine: false,
- * 	bracketSpacing: true,
- * 	checkIgnorePragma: false,
- * 	singleQuote: true,
- * 	// ...other options
- * }
- * ```
+ *
+ * Returns the default config with `singleQuote` overridden to `true`
  */
 export default function withTimbic(options?: Config): Config {
 	return { ...defaultConfig, ...options };
