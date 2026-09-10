@@ -36,7 +36,7 @@
 		"prepare": "husky"
 	},
 	"peerDependencies": {
-		"prettier": "^3.0.0"
+		"prettier": "^3.9.6"
 	},
 	"devDependencies": {
 		"@timbic/eslint-config": "1.2.1",
