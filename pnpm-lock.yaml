@@ -167,8 +167,8 @@ importers:
   .:
     devDependencies:
       '@timbic/eslint-config':
-        specifier: 1.2.1
-        version: 1.2.1(eslint@10.10.0(jiti@2.7.0))(typescript@6.0.3)
+        specifier: 1.2.2
+        version: 1.2.2(eslint@10.10.0(jiti@2.7.0))(typescript@6.0.3)
       '@types/node':
         specifier: 26.5.1
         version: 26.5.1
@@ -384,8 +384,8 @@ packages:
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
-  '@timbic/eslint-config@1.2.1':
-    resolution: {integrity: sha512-exlZdz1JlXWiZrp4DJomISbEVVjrYpUAl8dR37cxUe3mFiBF/eHYwDPN3mnkjOcayXjHdtcD4C1ap1yfkprZGQ==}
+  '@timbic/eslint-config@1.2.2':
+    resolution: {integrity: sha512-MD+vsVjUo6NqBn6mIeWWmK3YCeSkpEAF6z0B11LSJkJC7h974Gt+4hf5XUX9HAL5Ty1ltxbBtUx3nZqxG3YiLw==}
     peerDependencies:
       eslint: ^9.0.0 || ^10.0.0
 
@@ -1177,7 +1177,7 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.1': {}
 
-  '@timbic/eslint-config@1.2.1(eslint@10.10.0(jiti@2.7.0))(typescript@6.0.3)':
+  '@timbic/eslint-config@1.2.2(eslint@10.10.0(jiti@2.7.0))(typescript@6.0.3)':
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.10.0(jiti@2.7.0))
       '@typescript-eslint/eslint-plugin': 8.70.0(@typescript-eslint/parser@8.70.0(eslint@10.10.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.10.0(jiti@2.7.0))(typescript@6.0.3)
