@@ -1,5 +1,10 @@
 # @timbic/prettier-config
 
+<p>
+  <a href="https://www.npmjs.com/package/@timbic/prettier-config"><img src="https://img.shields.io/npm/v/@timbic/prettier-config.svg?logo=nodedotjs" alt="npm package"></a>
+  <a href="https://github.com/Timbic/prettier-config"><img src="https://img.shields.io/badge/Github-gray.svg?logo=github" alt="github repo"></a>
+</p>
+
 Extensible prettier configuration for smart developers.
 
 ## Usage
