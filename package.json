@@ -38,6 +38,11 @@
 	"peerDependencies": {
 		"prettier": "^3.0.0"
 	},
+	"peerDependenciesMeta": {
+		"prettier": {
+			"optional": true
+		}
+	},
 	"devDependencies": {
 		"@timbic/eslint-config": "1.2.2",
 		"@types/node": "26.6.5",
