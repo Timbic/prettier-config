@@ -1,4 +1,8 @@
-import type { LiteralUnion, BuiltInParserName, Plugin } from "prettier";
+import type { BuiltInParserName, LiteralUnion, Plugin } from "prettier";
+import type { OxcTimbicOptions } from "./plugins/oxc.ts";
+import { yamlDefaultConfig, type YamlPluginOptions, type YamlTimbicOptions } from "./plugins/yaml.ts";
+import { astroDefaultConfig, type AstroPluginOptions, type AstroTimbicOptions } from "./plugins/astro.ts";
+import { tailwindDefaultConfig, type TailwindPluginOptions, type TailwindTimbicOptions } from "./plugins/tw.ts";
 
 /**
  * For use in `prettier.config.js`, `prettier.config.ts`, `prettier.config.mjs`, `prettier.config.mts`
@@ -7,11 +11,11 @@ export interface Config extends Partial<Options> {
 	overrides?: Array<{
 		files: string | string[];
 		excludeFiles?: string | string[];
-		options?: Options;
+		options?: Partial<Options>;
 	}>;
 }
 
-export interface Options {
+export interface BaseOptions {
 	/**
 	 * Specify the line length that the printer will wrap on.
 	 * @default 140
@@ -153,6 +157,7 @@ export interface Options {
 	arrowParens: "avoid" | "always";
 	/**
 	 * Provide ability to support new languages to prettier.
+	 * When using `withTimbic()`, plugins you pass here are merged with any plugins added by `timbicOptions`.
 	 *
 	 * @see https://prettier.io/docs/plugins
 	 */
@@ -226,6 +231,8 @@ export interface Options {
 	[_: string]: unknown;
 }
 
+export interface Options extends BaseOptions, TailwindPluginOptions, AstroPluginOptions, YamlPluginOptions {}
+
 const defaultConfig = {
 	arrowParens: "always",
 	bracketSameLine: false,
@@ -253,9 +260,14 @@ const defaultConfig = {
 } satisfies Config;
 
 /**
+ * Custom settings, passed as the second argument to `withTimbic()`.
+ */
+export interface TimbicOptions extends OxcTimbicOptions, TailwindTimbicOptions, AstroTimbicOptions, YamlTimbicOptions {}
+
+/**
  * Returns a Prettier config preset with the Timbic defaults, merged with any
  * user-provided options.
-
+ *
  * @example
  * ```ts
  * export default withTimbic({
@@ -265,6 +277,38 @@ const defaultConfig = {
  *
  * Returns the default config with `singleQuote` overridden to `true`
  */
-export default function withTimbic(options?: Config): Config {
-	return { ...defaultConfig, ...options };
+export default function withTimbic(options: Config = {}, timbicOptions: TimbicOptions = {}): Config {
+	const { plugins: userPlugins = [], overrides: userOverrides = [], ...rest } = options;
+
+	const plugins: string[] = [];
+	const overrides: Config["overrides"] = [];
+	let config: Config = { ...defaultConfig };
+
+	if (timbicOptions.oxc) {
+		plugins.push("@prettier/plugin-oxc");
+	}
+
+	if (timbicOptions.astro) {
+		plugins.push("prettier-plugin-astro");
+		overrides.push({ files: "*.astro", options: { parser: "astro" } });
+		config = { ...config, ...astroDefaultConfig };
+	}
+
+	if (timbicOptions.yaml) {
+		plugins.push("prettier-plugin-yaml");
+		config = { ...config, ...yamlDefaultConfig };
+	}
+
+	// tailwind plugin must be last!!!
+	if (timbicOptions.tailwind) {
+		plugins.push("prettier-plugin-tailwindcss");
+		config = { ...config, ...tailwindDefaultConfig };
+	}
+
+	return {
+		...config,
+		...rest,
+		plugins: [...new Set([...plugins, ...userPlugins])],
+		overrides: [...overrides, ...userOverrides],
+	};
 }
