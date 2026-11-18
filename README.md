@@ -5,12 +5,12 @@
   <a href="https://github.com/Timbic/prettier-config"><img src="https://img.shields.io/badge/Github-gray.svg?logo=github" alt="github repo"></a>
 </p>
 
-Extensible prettier configuration for smart developers.
+Extensible Prettier configuration for smart developers.
 
 ## Usage
 
 ```bash
-pnpm add -D prettier @timbic/prettier-config
+pnpm add -D @timbic/prettier-config
 ```
 
 ```ts
@@ -28,29 +28,41 @@ export default withTimbic({
 
 Your options will override the defaults and extend the config.
 
+## Plugins
+
+This package includes several Prettier plugins. To enable them use the second parameter of `withTimbic()` function:
+
+```ts
+export default withTimbic({}, { oxc: true, tailwind: true });
+```
+
+Currently included plugins:
+
+- `@prettier/plugin-oxc`
+- `prettier-plugin-tailwindcss`
+- `prettier-plugin-astro`
+- `prettier-plugin-yaml`
+
 ## Types
 
-Now this package has its own types! That means that when using withTimbic() you will get enhanced type annotations via Quick Info on each
-rule, as well as the right default set by withTimbic(), e.g.
+When using `withTimbic()`, you get enhanced type annotations (via Quick Info/IntelliSense) for each option, including bundled plugin
+options, as well as the correct defaults set by `withTimbic()`.
 
 ```ts
 // before
 export default withTimbic({
 	tabWidth: 3,
-	// Specify the number of spaces per indentation-level.
 	// @default
 	//
-	// 2 (incorrect, this is not a withTimbic() default, this is the prettier default)
+	// 2 (incorrect, this is not a withTimbic() default, this is the Prettier default)
 });
 
 // after
 export default withTimbic({
 	tabWidth: 3,
-	// Specify the number of spaces per indentation-level.
 	// @default
 	//
 	// 4 (correct, see our default options below)
-	// @see — https://prettier.io/docs/options#tab-width
 });
 ```
 
