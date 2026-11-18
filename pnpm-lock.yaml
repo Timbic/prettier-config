@@ -192,8 +192,8 @@ importers:
         specifier: ^0.8.1
         version: 0.8.1(@prettier/plugin-oxc@0.2.4)(prettier-plugin-astro@1.1.2(prettier@3.10.1))(prettier@3.10.1)
       prettier-plugin-yaml:
-        specifier: ^1.3.1
-        version: 1.3.1(prettier@3.10.1)
+        specifier: ^1.3.2
+        version: 1.3.2(prettier@3.10.1)
     devDependencies:
       '@timbic/eslint-config':
         specifier: 1.2.3
@@ -1112,8 +1112,8 @@ packages:
       prettier-plugin-svelte:
         optional: true
 
-  prettier-plugin-yaml@1.3.1:
-    resolution: {integrity: sha512-SPBhTO+R7R1fYghQ1SLR8Wgvcq/CZEDaFEu2XJKhAm48AxbnLjwuY9N1voA6xGK1mFQqEdkpQwDAxu48GhojHQ==}
+  prettier-plugin-yaml@1.3.2:
+    resolution: {integrity: sha512-b5DAozUYb018BCGTQpEimlaVnoEESP/Ax5VmUIFdDc/aD/uisRkmc4mh45mLV5GvsGxoien+eDbsk/K7hk1H3w==}
     engines: {node: '>=20'}
     peerDependencies:
       prettier: '>=3'
@@ -2045,7 +2045,7 @@ snapshots:
       '@prettier/plugin-oxc': 0.2.4
       prettier-plugin-astro: 1.1.2(prettier@3.10.1)
 
-  prettier-plugin-yaml@1.3.1(prettier@3.10.1):
+  prettier-plugin-yaml@1.3.2(prettier@3.10.1):
     dependencies:
       prettier: 3.10.1
       yaml: 2.9.1
