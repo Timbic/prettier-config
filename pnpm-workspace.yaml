@@ -10,3 +10,6 @@ trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 86400 # 1 day
 minimumReleaseAgeExclude:
     - "@timbic/*"
+
+skills:
+    dirs: []
