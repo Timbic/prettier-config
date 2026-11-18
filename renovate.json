@@ -29,6 +29,12 @@
 		},
 		{
 			"matchManagers": ["github-actions"],
+			"matchDepTypes": ["uses-with"],
+			"matchDepNames": ["node"],
+			"enabled": false
+		},
+		{
+			"matchManagers": ["github-actions"],
 			"dependencyDashboardCategory": "GitHub Actions",
 			"groupName": "GitHub Actions",
 			"groupSlug": "github-actions",
