@@ -281,7 +281,19 @@ export interface TimbicOptions extends OxcTimbicOptions, TailwindTimbicOptions, 
  * });
  * ```
  *
- * Returns the default config with `singleQuote` overridden to `true`
+ * Returns the default config with `singleQuote` overridden to `true` .
+ *
+ * The second parameter can be used to specify which bundled plugins to activate:
+ *
+ * @example
+ * ```ts
+ * export default withTimbic({}, { tailwind: true });
+ * ```
+ *
+ * This will activate `prettier-plugin-tailwindcss` .
+ *
+ * You can see currently bundled plugins here:
+ * @see https://github.com/Timbic/prettier-config#plugins
  */
 export default function withTimbic(options: Config = {}, timbicOptions: TimbicOptions = {}): Config {
 	const { plugins: userPlugins = [], overrides: userOverrides = [], ...rest } = options;
