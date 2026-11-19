@@ -29,6 +29,11 @@
 		},
 		{
 			"matchManagers": ["github-actions"],
+			"matchUpdateTypes": ["pinDigest"],
+			"minimumReleaseAge": null
+		},
+		{
+			"matchManagers": ["github-actions"],
 			"matchDepTypes": ["uses-with"],
 			"matchDepNames": ["node"],
 			"enabled": false
