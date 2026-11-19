@@ -233,6 +233,12 @@ export interface BaseOptions {
 
 export interface Options extends BaseOptions, TailwindPluginOptions, AstroPluginOptions, YamlPluginOptions {}
 
+const bundledPlugins = new Set(["@prettier/plugin-oxc", "prettier-plugin-astro", "prettier-plugin-yaml", "prettier-plugin-tailwindcss"]);
+
+function resolveBundledPlugin(plugin: NonNullable<Config["plugins"]>[number]) {
+	return typeof plugin === "string" && bundledPlugins.has(plugin) ? import.meta.resolve(plugin) : plugin;
+}
+
 const defaultConfig = {
 	arrowParens: "always",
 	bracketSameLine: false,
@@ -280,35 +286,35 @@ export interface TimbicOptions extends OxcTimbicOptions, TailwindTimbicOptions, 
 export default function withTimbic(options: Config = {}, timbicOptions: TimbicOptions = {}): Config {
 	const { plugins: userPlugins = [], overrides: userOverrides = [], ...rest } = options;
 
-	const plugins: string[] = [];
+	const plugins: Config["plugins"] = [];
 	const overrides: Config["overrides"] = [];
 	let config: Config = { ...defaultConfig };
 
 	if (timbicOptions.oxc) {
-		plugins.push("@prettier/plugin-oxc");
+		plugins.push(resolveBundledPlugin("@prettier/plugin-oxc"));
 	}
 
 	if (timbicOptions.astro) {
-		plugins.push("prettier-plugin-astro");
+		plugins.push(resolveBundledPlugin("prettier-plugin-astro"));
 		overrides.push({ files: "*.astro", options: { parser: "astro" } });
 		config = { ...config, ...astroDefaultConfig };
 	}
 
 	if (timbicOptions.yaml) {
-		plugins.push("prettier-plugin-yaml");
+		plugins.push(resolveBundledPlugin("prettier-plugin-yaml"));
 		config = { ...config, ...yamlDefaultConfig };
 	}
 
 	// tailwind plugin must be last!!!
 	if (timbicOptions.tailwind) {
-		plugins.push("prettier-plugin-tailwindcss");
+		plugins.push(resolveBundledPlugin("prettier-plugin-tailwindcss"));
 		config = { ...config, ...tailwindDefaultConfig };
 	}
 
 	return {
 		...config,
 		...rest,
-		plugins: [...new Set([...plugins, ...userPlugins])],
+		plugins: [...new Set([...plugins, ...userPlugins.map(resolveBundledPlugin)])],
 		overrides: [...overrides, ...userOverrides],
 	};
 }
