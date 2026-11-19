@@ -14,6 +14,19 @@ Extensible Prettier configuration for smart developers.
 pnpm add -D @timbic/prettier-config
 ```
 
+> **Important:** When using pnpm, don't forget to hoist Prettier to the top level in `pnpm-workspace.yaml`:
+>
+> ```yaml
+> publicHoistPattern:
+> 	- prettier
+> ```
+>
+> Alternatively, install Prettier as a dev dependency:
+>
+> ```bash
+> pnpm add -D prettier
+> ```
+
 ```ts
 // prettier.config.{js,mjs,ts,mts}
 import withTimbic from "@timbic/prettier-config";
