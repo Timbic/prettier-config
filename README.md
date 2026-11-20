@@ -18,7 +18,7 @@ pnpm add -D @timbic/prettier-config
 >
 > ```yaml
 > publicHoistPattern:
-> 	- prettier
+>     - prettier
 > ```
 >
 > Alternatively, install Prettier as a dev dependency:
